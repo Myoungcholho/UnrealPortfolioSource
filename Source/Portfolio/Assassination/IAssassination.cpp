@@ -1,0 +1,2 @@
+#include "../Assassination/IAssassination.h"
+

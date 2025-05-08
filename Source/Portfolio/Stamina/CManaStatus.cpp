@@ -1,0 +1,2 @@
+#include "../Stamina/CManaStatus.h"
+
