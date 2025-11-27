@@ -146,7 +146,7 @@ UI 코드가 쉽게 비대해지는 문제가 있었습니다.</br>
 **요약**
 - [빠른 공격 모션 타격 누락 — Hybrid Hit Detection](#ts-hit)
 - [암살 몽타주 구조 문제 — Set 기반 구조로 리팩토링](#ts-assassinate)
-- [Delegate / GC Crash — UPROPERTY 관리 미흡](#ts-gc)
+- [Delegate / GC Crash — UPROPERTY 관리 미흡](#ts-gc2)
 - [AI 상태 전이 타이밍 문제 — Token 기반 접근 제어 구조](#ts-ai)
 
 ---
@@ -252,7 +252,7 @@ FPS 변동과 무관하게 안정적인 히트 판정을 확보했습니다.</br
 
 ---
 
-### 3. Delegate / GC Crash 문제 (UPROPERTY 관리 문제) <a id="ts-gc"></a>
+### 3. Delegate / GC Crash 문제 (UPROPERTY 관리 문제) <a id="ts-gc2"></a>
 
 - 문제 상황
   
