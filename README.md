@@ -155,6 +155,8 @@ UI 코드가 쉽게 비대해지는 문제가 있었습니다.</br>
 
 - 문제 상황
 
+<img width="250" height="160" alt="image" src="https://github.com/user-attachments/assets/7be33959-d84e-4313-ae1a-ac8ae9719cd4" />
+
 빠른 공격 모션에서 간헐적으로 적이 타격되지 않는 현상 발생했습니다.</br>
 애니메이션 상 타격 위치는 정확했지만,</br>
 실제 플레이에서는 타격이 누락되는 경우가 종종 발생했습니다.</br>
@@ -171,7 +173,9 @@ Collision이 활성화된 구간에 적이 들어왔다가 프레임 단위 샘�
 즉, Collision Overlap 이벤트만으로는 빠른 모션에서 안정적인 타격을 보장하기 어려운 구조였습니다.</br>
 
 - 해결
-  
+
+<img width="250" height="160" alt="image" src="https://github.com/user-attachments/assets/9aa7b46b-4edb-487a-afac-7e0576136a10" />
+
 기존의 Collision 단일 판정 방식을, Collision + Trace를 병행하는 Hybrid 방식으로 확장했습니다.</br>
 
 매 프레임마다 Collider의 이전 위치와 현재 위치를 기준으로 LineTrace를 수행하여,</br>
@@ -232,7 +236,9 @@ FPS 변동과 무관하게 안정적인 히트 판정을 확보했습니다.</br
 중간에서 조율하는 매니저가 중앙에서 책임지고 관리하도록 구조를 재편했습니다.</br>
 
 - 결과
-  
+
+<img width="250" height="160" alt="image" src="https://github.com/user-attachments/assets/132c0a45-7e2d-437a-8f5b-af033eaffb02" />
+
 공격자/피격자/카메라 설정을 하나의 세트로 관리하면서,</br>
 새로운 처형을 추가할 때도“세트 하나 등록”만으로 연출 구성이 가능해졌습니다.</br>
 
@@ -297,7 +303,7 @@ RootSet이나 월드에 직접 배치된 객체들은 다른 경로로 GC가 인
 ### 4. AI 상태 전이 타이밍 문제 (BehaviorTree / AI Flow 개선) <a id="ts-ai"></a>
 
 - 문제 상황
-  
+
 여러 AI가 동시에 한 플레이어를 둘러싸고 싸우는 전투에서</br>
 각 AI가 Approach / Action / Strafe 같은 상태를 기준으로 움직이도록 설계했습니다.</br>
 
@@ -306,6 +312,8 @@ RootSet이나 월드에 직접 배치된 객체들은 다른 경로로 GC가 인
 
 - 원인 분석
   
+<img width="250" height="160" alt="image" src="https://github.com/user-attachments/assets/c69df04f-8936-4bc0-bc67-a7e2e51536ac" />
+
 처음의 구조는 각 AI가 자기 State컴포넌트의 상태를보고 BT Service/Task안에서</br>
 ”지금은 붙어도 되는지 / Strafe 해야 하는지”를 판단하고 결과에 따라 이동/회전/공격을 수행하고 있었습니다.</br>
 
@@ -318,7 +326,7 @@ RootSet이나 월드에 직접 배치된 객체들은 다른 경로로 GC가 인
 문제의 본질은 업데이트 순서로 상태의 변경 순서가 지연됨에 재변경되는 문제였습니다.</br>
 
 - 해결
-  
+
 상태 플래그에 직접 의존해 “붙을지 말지”를 판단하는 대신,</br>
 중앙에서 토큰을 배분하는 방식으로 구조를 바꾸었습니다.</br>
 
@@ -348,3 +356,12 @@ FSM은 큰 흐름을 나누는 용도에 두고, 세부 로직은 토큰 매니�
 별도 통제 수단과 조합하는 쪽이 더 적절하다는 걸 느꼈습니다.</br>
 
 # 📘핵심 주요 코드
+- [🔌 AIDebugger Plugin](https://github.com/Myoungcholho/UnrealPortfolioSource/tree/master/Plugins/AIDebugger/Source/AIDebugger)  
+- [🗡 Assassination](https://github.com/Myoungcholho/UnrealPortfolioSource/tree/master/Source/Portfolio/Assassination)  
+- [🧠 BehaviorTree](https://github.com/Myoungcholho/UnrealPortfolioSource/tree/master/Source/Portfolio/BehaviorTree)
+- [🧍 Character](https://github.com/Myoungcholho/UnrealPortfolioSource/tree/master/Source/Portfolio/Character)  
+- [🧩 Components](https://github.com/Myoungcholho/UnrealPortfolioSource/tree/master/Source/Portfolio/Components)  
+- [👹 Enemies](https://github.com/Myoungcholho/UnrealPortfolioSource/tree/master/Source/Portfolio/Enemies)  
+- [🧰 Items](https://github.com/Myoungcholho/UnrealPortfolioSource/tree/master/Source/Portfolio/Items)  
+- [🖥 UI Widget](https://github.com/Myoungcholho/UnrealPortfolioSource/tree/master/Source/Portfolio/Widget)  
+- [⚔ Weapons](https://github.com/Myoungcholho/UnrealPortfolioSource/tree/master/Source/Portfolio/Weapons)
