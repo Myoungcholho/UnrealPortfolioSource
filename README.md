@@ -1,26 +1,270 @@
 # 📘언리얼 3D 액션 게임 프로젝트
 <br>
-<img align="right" width="420"
-     src="https://github.com/user-attachments/assets/c4b862bb-c273-42a1-a2c1-ee171d5a8244"
-     alt="Unreal Engine5 Action Game" />
+<p align="center">
+  <img
+    width="800"
+    src="https://github.com/user-attachments/assets/19a7d879-6a57-4b4d-961b-5254333bce36"
+    alt="unreal" />
+</p>
 
-- 소개 영상: [포트폴리오 영상](https://www.youtube.com/watch?v=xfAdjhyRtIA)
-- 개발 기간: 2025.01.06 ~ 2025.04.02 (87일)  
-- 개발 인원: 1명
-- 핵심 요약: 언리얼 엔진을 활용한 3D 액션 게임  
-- 개발 환경:
-  - 언어: C++
-  - 엔진: Unreal Engine 5
+{프로젝트 내용 소개}
 
-<br clear="both"/>
+| 항목 | 내용 |
+|------|------|
+| 📹 소개 영상 | [📎포트폴리오 영상](https://www.youtube.com/watch?v=xfAdjhyRtIA) |
+| 🕒 개발 기간 | 2025.01.06 ~ 2025.04.02 (87일) |
+| 👤 개발 인원 | 1명 |
+| 🧰 개발 환경 | C++ |
+| 🛠 실행 및 디버깅 툴 | Unreal Engine 5 |
+
+</br>
 
 # 📘목차
-- [개발 계기](#개발-계기)
-- [아쉬웠던 점](#아쉬웠던-점)
-- [프로젝트에서 얻은 것](#프로젝트에서-얻은-것)
-- [구현 내용](#구현-내용)
-- [문제 해결 경험(트러블 슈팅)](#문제-해결-경험트러블-슈팅)
-- [핵심 주요 코드](#핵심-주요-코드)
+- [구현 요약 내용](#구현-요약-내용-목차-이동)
+- [핵심 주요 코드](#핵심-주요-코드-목차-이동)
+- [문제 해결 경험(트러블 슈팅)](#문제-해결-경험트러블-슈팅-목차-이동)
+- [프로젝트에서 얻은 것](#프로젝트에서-얻은-것-목차-이동)
+- [개발 계기](#개발-계기-목차-이동)
+- [구현 상세 내용](#구현-상세-내용-목차-이동)
+
+</br>
+
+# 📘구현 요약 내용 [(목차 이동)](#목차)
+
+| 상세 설명 링크 | 구현 요약 |
+|----------------------|------------------|
+| [🧱 Core Architecture](#core) |  |
+| [🌍 World / Object](#world) | |
+| [🎨 Rendering](#rendering) |  |
+| [🕺 Animation](#animation) |  |
+| [📦 Asset](#asset) | |
+| [🛠 Editor](#editor) |  |
+| [📊 Profiling](#profiling) |  |
+
+</br>
+
+# 📘핵심 주요 코드 [(목차 이동)](#목차)
+
+| 코드 파일 | 코드 설명 |
+|----------|-----------|
+| 파일명 [.h]() / [.cpp]() | 내용 |
+
+</br>
+
+# 📘문제 해결 경험(트러블 슈팅) [(목차 이동)](#목차)
+
+<table style="border-collapse:collapse;">
+  <tr>
+    <th width="350" style="border:2px solid #ffb3b3; background:#ffe1e1;">
+      📂 빠른 공격 모션에서 타격 누락 문제 (Hit Detection 안정화)
+    </th>
+    <th width="350" style="border:2px solid #ffd27f; background:#fff1d6;">
+      📚 암살 몽타주 관리 구조 문제 → 세트 기반 구조로 리팩토링
+    </th>
+    <th width="350" style="border:2px solid #c3c3ff; background:#e9e9ff;">
+      🧾 Delegate / GC Crash 문제 (UPROPERTY 관리 문제)
+    </th>
+  </tr>
+
+  <tr>
+    <td width="350" style="border:2px solid #ffb3b3; background:#ffe1e1; vertical-align:top;">
+      트러블 슈팅 간략 소개 내용
+      <br><br>
+      <a href="#t0">[상세설명]</a>
+    </td>
+    <td width="350" style="border:2px solid #ffd27f; background:#fff1d6; vertical-align:top;">
+      트러블 슈팅 간략 소개 내용
+      <br><br>
+      <a href="#t1">[상세설명]</a>
+    </td>
+    <td width="350" style="border:2px solid #c3c3ff; background:#e9e9ff; vertical-align:top;">
+      트러블 슈팅 간략 소개 내용
+      <br><br>
+      <a href="#t2">[상세설명]</a>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<table style="border-collapse:collapse;">
+  <tr>
+    <th width="350" style="border:2px solid #a8ddff; background:#e6f6ff;">
+      📘 AI 상태 전이 타이밍 문제 (BehaviorTree / AI Flow 개선)
+    </th>
+    <th width="350" style="border:2px solid #c8ffa8; background:#ebffdf;">
+      📂 트러블 슈팅 제목
+    </th>
+  </tr>
+
+  <tr>
+    <td width="350" style="border:2px solid #a8ddff; background:#e6f6ff; vertical-align:top;">
+      트러블 슈팅 간략 소개 내용
+      <br><br>
+      <a href="#t3">[상세설명]</a>
+    </td>
+    <td width="350" style="border:2px solid #c8ffa8; background:#ebffdf; vertical-align:top;">
+      트러블 슈팅 간략 소개 내용
+      <br><br>
+      <a href="#t4">[상세설명]</a>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 1. 빠른 공격 모션에서 타격 누락 문제 (Hit Detection 안정화) <a id="t0"></a> [(트러블 슈팅 목록 이동)](#문제-해결-경험트러블-슈팅-목차-이동)
+
+<table>
+  <tr>
+    <td style="border:2px solid #4fa3ff; border-radius:8px; padding:12px 16px; background:#050812;">
+      <strong>🧩 문제</strong></br>
+      <img width="250" height="160" alt="image" src="https://github.com/user-attachments/assets/7be33959-d84e-4313-ae1a-ac8ae9719cd4" />
+      <ul>
+        <li> 공격이 맞는 것처럼 보이는데 실제 게임 판정에서는 가끔 안 맞는 상황이 발생</li>
+      </ul>
+      <strong>🔍 원인 분석</strong>
+      <ul>
+        <li> 프레임 사이 이동량이 커져 Collision 활성 구간을 건너뛰며 판정이 누락되는 문제 </li>
+      </ul>
+      <strong>🛠 해결</strong><br>
+      <img width="250" height="160" alt="image" src="https://github.com/user-attachments/assets/9aa7b46b-4edb-487a-afac-7e0576136a10" />
+      <ul>
+        <li> Collision 단일 판정 방식을, Collision + Trace를 병행하는 Hybrid 방식으로 확장함 </li>
+        <li> 이전 위치 ~ 현재 위치를 LineTrace로 따라가며 Collision이 놓친 대상도 추가 타격되도록 함 </li>
+      </ul>
+      <strong>✅ 결과</strong><br>
+      <ul>
+        <li> 빠른 공격에서 발생하던 타격 누락을 없애고, 프레임 의존적인 판정을 궤적 기반으로 바꿔 안정적인 히트 판정을 확보 </li>
+      </ul>
+      <strong>📚 배운 점</strong>
+      <ul>
+        <li> 콘텐츠 프로그래머는 도구를 폭넓게 이해하고 과감히 조합·응용하는 역할임을 배움 </li>
+        <li> 단일 기능만으로 모든 상황을 해결할 수 없다는 점을 깨달음 </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 2. 암살 몽타주 관리 구조 문제 → 세트 기반 구조로 리팩토링 <a id="t1"></a> [(트러블 슈팅 목록 이동)](#문제-해결-경험트러블-슈팅-목차-이동)
+
+<table>
+  <tr>
+    <td style="border:2px solid #ffd27f; border-radius:8px; padding:12px 16px; background:#120d05;">
+      <strong>🧩 문제</strong>
+      <ul>
+        <li> 피격 모션은 피격자 쪽에서만 몽타주를 가지는 구조였음 </li>
+        <li> 처형의 경우 공격자·피격자가 같은 몽타주 세트를 실행해야 하는데, 서로 별도로 들고 있어 데이터가 흩어지고 세팅 실수를 유발함 </li>
+      </ul>
+      <strong>🔍 원인 분석</strong>
+      <ul>
+        <li> 암살 연출은 두 캐릭터 몽타주가 항상 짝을 맞춰야 하는데도, 피격 처리처럼 서로 별도로 설정하는 구조였던 점이 문제였음 </li>
+      </ul>
+      <strong>🛠 해결</strong><br>
+      <ul>
+        <li> 피격 모션과 분리해, 처형 연출은 단일 ‘세트 데이터’ 기반 구조로 리팩토링함 </li>
+        <li> 암살 요청 시 중앙에서 적절한 세트를 선택해 각 캐릭터에 전달하는 방식으로 책임을 위임함 </li>
+      </ul>
+      <strong>✅ 결과</strong><br>
+      <img width="250" height="160" alt="image" src="https://github.com/user-attachments/assets/132c0a45-7e2d-437a-8f5b-af033eaffb02" />
+      <ul>
+        <li> 처형 데이터를 하나의 세트로 관리해 세팅 실수 가능성을 줄이고, 유지보수 비용을 낮춤 </li>
+        <li> 캐릭터는 암살 데이터를 ‘소유’하지 않고 ‘소비’만 하도록 역할을 분리해, 구조를 파악하기 쉬워짐 </li>
+      </ul>
+      <strong>📚 배운 점</strong>
+      <ul>
+        <li> 세 번의 리팩토링을 거치며, 부딪히고 고쳐 나가는 과정 자체가 설계 감각을 키워주는 개발자의 자산이라는 점을 체감함 </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 3.  <a id="t2"></a> [(트러블 슈팅 목록 이동)](#문제-해결-경험트러블-슈팅-목차-이동)
+
+<table>
+  <tr>
+    <td style="border:2px solid #a8ddff; border-radius:8px; padding:12px 16px; background:#050a12;">
+      <strong>🧩 문제</strong><br>
+      <ul>
+        <li> 게임이 시작되고 60초쯤 이후에 인벤토리의 델리게이트 크래시가 발생함 </li>
+      </ul>
+      <strong>🔍 원인 분석</strong><br>
+      <ul>
+        <li> TArray<UCInventoryItem*> 컨테이너에 UPROPERTY가 선언하지 않아 GC가 수거해가는 것이 문제였음 </li>
+        <li></li>
+      </ul>
+      <strong>🛠 해결</strong>
+      <ul>
+        <li> 아이템 객체 배열을 UPROPERTY()를 선언해 GC가 배열 및 그 내부 객체를 올바르게 추적하도록 변경 </li>
+        <li></li>
+      </ul>
+      <strong>✅ 결과</strong><br>
+      <ul>
+        <li> 장시간 플레이 및 인벤토리 갱신이 반복되는 상황에서도 더 이상 델리게이트 Broadcast 시점 크래시가 발생하지 않게 됨 </li>
+      </ul>
+      <strong>📚 배운 점</strong>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 4.  <a id="t3"></a> [(트러블 슈팅 목록 이동)](#문제-해결-경험트러블-슈팅-목차-이동)
+
+<table>
+  <tr>
+    <td style="border:2px solid #4fa3ff; border-radius:8px; padding:12px 16px; background:#050812;">
+      
+      <strong>🧩 문제</strong><br>
+      <img width="461" height="110" alt="image" src="" />
+      <ul>
+        <li></li>
+      </ul>
+
+      <strong>🔍 원인 분석</strong>
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
+      <img width="461" height="110" alt="image" src="" />
+      <ul>
+        <li></li>
+      </ul>
+
+      <strong>🛠 해결</strong>
+      <ul>
+        <li></li>
+      </ul>
+
+      <strong>✅ 결과</strong><br>
+      <img width="461" height="110" alt="image" src="" />
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
+
+      <strong>📚 배운 점</strong>
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
+
+    </td>
+  </tr>
+</table>
+
+---
+
+</br>
 
 # 📘개발 계기
 ### 1. 언리얼 엔진을 ‘개발자 관점’에서 익히기 위해
