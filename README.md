@@ -1,4 +1,4 @@
-# 📘언리얼 3D 액션 게임 프로젝트
+# 📘언리얼 3D 액션 게임
 <br>
 <p align="center">
   <img
@@ -7,7 +7,11 @@
     alt="unreal" />
 </p>
 
-{프로젝트 내용 소개}
+Unity로 만들었던 3D 액션 게임을 Unreal로 포팅하며, 이전 프로젝트의 구조적 아쉬움을 개선하는 데 집중했습니다.
+
+UI는 MVVM 패턴으로 분리하고, 전투·아이템은 이벤트/인터페이스 기반, 데이터 드리븐 구조로 재설계해 유지보수를 유연하게 만들었습니다.
+
+보스의 공격과 반응을 하나하나 다듬어, 실제 전투에 가까운 액션을 구현했습니다.
 
 | 항목 | 내용 |
 |------|------|
@@ -44,7 +48,7 @@
 
 | 코드 파일 | 코드 설명 |
 |----------|-----------|
-| 파일명 DefaultWidgetController [.h](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Widget/DefaultWidgetController.h) / [.cpp](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Widget/DefaultWidgetController.cpp) | UI용 ViewModel이자 이벤트 허브로서, 게임 플레이 컴포넌트와 UMG 위젯 사이를 연결하는 중간 계층 역할을 하는 코드입니다. |
+| DefaultWidgetController [.h](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Widget/DefaultWidgetController.h) / [.cpp](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Widget/DefaultWidgetController.cpp) | UI용 ViewModel이자 이벤트 허브로서, 게임 플레이 컴포넌트와 UMG 위젯 사이를 연결하는 중간 계층 역할을 하는 코드입니다. |
 | CTeamCombatManager [.h](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Managers/CTeamCombatManager.h) / [.cpp](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Managers/CTeamCombatManager.cpp) | 타겟별 접근 토큰을 중앙에서 관리하며, AI의 접근 요청·해제를 조정하는 집단 전투 매니저입니다. |
 | AIStateDebugger [.h](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Plugins/AIDebugger/Source/AIDebugger/Debugger/AIStateDebugger.h) / [.cpp](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Plugins/AIDebugger/Source/AIDebugger/Debugger/AIStateDebugger.cpp) | 플레이어와 AI의 전투 상태를 GamePlay Debugger에 표시하는 디버그용 카테고리입니다. |
 | CAssassinationManager [.h](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Assassination/CAssassinationManager.h) / [.cpp](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Assassination/CAssassinationManager.cpp) | 암살 시도 시, 인터페이스 구현 여부와 암살 가능 조건을 확인한 뒤 슬로우 모션과 몽타주 데이터를 세팅하고 암살 실행을 지시하는 매니저입니다. |
@@ -94,7 +98,7 @@
     <td width="350" style="border:2px solid #a8ddff; background:#e6f6ff; vertical-align:top;">
       60초 이후 주기적으로 발생하던 GC 기반 크래시 문제를 원인 분석 후 해결했습니다.
       <br><br>
-      <a href="#t3">[상세설명]</a>
+      <a href="#t2">[상세설명]</a>
     </td>
     <td width="350" style="border:2px solid #a8ddff; background:#e6f6ff; vertical-align:top;">
       과도한 FSM 사용으로 코드 작성이 어려웠던 문제를 로직을 FSM에서 분리해 의존도를 줄이는 방식으로 해결했습니다.
