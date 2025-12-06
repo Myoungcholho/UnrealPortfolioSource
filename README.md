@@ -20,26 +20,23 @@
 </br>
 
 # 📘목차
-- [구현 요약 내용](#구현-요약-내용-목차-이동)
+- [구현 내용](#구현-내용-목차-이동)
 - [핵심 주요 코드](#핵심-주요-코드-목차-이동)
 - [문제 해결 경험(트러블 슈팅)](#문제-해결-경험트러블-슈팅-목차-이동)
 - [프로젝트에서 얻은 것](#프로젝트에서-얻은-것-목차-이동)
 - [개발 계기](#개발-계기-목차-이동)
-- [구현 상세 내용](#구현-상세-내용-목차-이동)
 
 </br>
 
-# 📘구현 요약 내용 [(목차 이동)](#목차)
+# 📘구현 내용 [(목차 이동)](#목차)
 
 | 상세 설명 링크 | 구현 요약 |
 |----------------------|------------------|
-| [🧱 Core Architecture](#core) |  |
-| [🌍 World / Object](#world) | |
-| [🎨 Rendering](#rendering) |  |
-| [🕺 Animation](#animation) |  |
-| [📦 Asset](#asset) | |
-| [🛠 Editor](#editor) |  |
-| [📊 Profiling](#profiling) |  |
+| 🧱 Character · Combat | 상태/무기/스테미나/가드/피격/처형/커맨드 공격 로직 구현 |
+| 🌍 Item · Inventory | 드랍·획득·사용 및 슬롯/인벤토리 구조 설계 |
+| 🎨 UI (MVVM) | 체력/스테미나/아이템 슬롯 UI, 데이터 바인딩 구조 |
+| 🕺 AI Combat | 적 계층 구조 분리 , 중앙 토큰 기반 전투 관리, 상태 머신 구현 |
+| 🛠 PlugIn | 게임 속도 조절 툴바와 재시작 후에도 유지되는 슬로모, GamePlay Debugger 연동 AI 상태 디버거 구현 |
 
 </br>
 
@@ -47,7 +44,11 @@
 
 | 코드 파일 | 코드 설명 |
 |----------|-----------|
-| 파일명 [.h]() / [.cpp]() | 내용 |
+| 파일명 DefaultWidgetController [.h](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Widget/DefaultWidgetController.h) / [.cpp](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Widget/DefaultWidgetController.cpp) | UI용 ViewModel이자 이벤트 허브로서, 게임 플레이 컴포넌트와 UMG 위젯 사이를 연결하는 중간 계층 역할을 하는 코드입니다. |
+| CTeamCombatManager [.h](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Managers/CTeamCombatManager.h) / [.cpp](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Managers/CTeamCombatManager.cpp) | 타겟별 접근 토큰을 중앙에서 관리하며, AI의 접근 요청·해제를 조정하는 집단 전투 매니저입니다. |
+| AIStateDebugger [.h](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Plugins/AIDebugger/Source/AIDebugger/Debugger/AIStateDebugger.h) / [.cpp](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Plugins/AIDebugger/Source/AIDebugger/Debugger/AIStateDebugger.cpp) | 플레이어와 AI의 전투 상태를 GamePlay Debugger에 표시하는 디버그용 카테고리입니다. |
+| CAssassinationManager [.h](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Assassination/CAssassinationManager.h) / [.cpp](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Assassination/CAssassinationManager.cpp) | 암살 시도 시, 인터페이스 구현 여부와 암살 가능 조건을 확인한 뒤 슬로우 모션과 몽타주 데이터를 세팅하고 암살 실행을 지시하는 매니저입니다. |
+| CItemManager [.h](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Items/CItemManager.h) / [.cpp](https://github.com/Myoungcholho/UnrealPortfolioSource/blob/master/Source/Portfolio/Items/CItemManager.cpp) | 데이터 테이블에 정의된 아이템과 관련 이펙트를 월드에 스폰하는 역할을 담당합니다. |
 
 </br>
 
@@ -274,7 +275,7 @@
 
 ### 3. 액션 게임 콘텐츠 개발 경험 <a id="gain-cpp-resource"></a> [(⬆표로 이동)](#프로젝트에서-얻은-것-목차-이동)
 
-이펙트 회전 방향 계산, 커맨드 입력 구조, 상태 중첩 관리, 피격 이벤트 처리 등 액션 게임 전투 콘텐츠를 직접 구현하며, 그 과정에서 필요한 수학적 개념, 엔진 기능 활용 능력, 실전 노하우를 함께 쌓았습니다.
+이펙트 회전 방향 계산, 커맨드 입력 구조, 상태 중첩 관리, 피격 이벤트 처리 등 액션 게임 전투 콘텐츠를 직접 구현하며, 그 과정에서 필요한 수학적 개념, 엔진 기능 활용 능력을 쌓을 수 있었습니다.
 
 ---
 
