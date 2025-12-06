@@ -61,26 +61,18 @@
     <th width="350" style="border:2px solid #ffd27f; background:#fff1d6;">
       📚 암살 몽타주 관리 구조 문제 → 세트 기반 구조로 리팩토링
     </th>
-    <th width="350" style="border:2px solid #c3c3ff; background:#e9e9ff;">
-      🧾 Delegate / GC Crash 문제 (UPROPERTY 관리 문제)
-    </th>
   </tr>
 
   <tr>
     <td width="350" style="border:2px solid #ffb3b3; background:#ffe1e1; vertical-align:top;">
-      트러블 슈팅 간략 소개 내용
+      빠른 공격에서 발생하던 미적중 문제를 하이브리드 콜리전 체크 방식으로 해결했습니다.
       <br><br>
       <a href="#t0">[상세설명]</a>
     </td>
     <td width="350" style="border:2px solid #ffd27f; background:#fff1d6; vertical-align:top;">
-      트러블 슈팅 간략 소개 내용
+      처형에서 세트로 따로 관리하던 구조를 단일 세트로 리팩토링해 유지보수 문제를 해결했습니다.
       <br><br>
       <a href="#t1">[상세설명]</a>
-    </td>
-    <td width="350" style="border:2px solid #c3c3ff; background:#e9e9ff; vertical-align:top;">
-      트러블 슈팅 간략 소개 내용
-      <br><br>
-      <a href="#t2">[상세설명]</a>
     </td>
   </tr>
 </table>
@@ -90,23 +82,23 @@
 <table style="border-collapse:collapse;">
   <tr>
     <th width="350" style="border:2px solid #a8ddff; background:#e6f6ff;">
-      📘 AI 상태 전이 타이밍 문제 (BehaviorTree / AI Flow 개선)
+      🧾 Delegate / GC Crash 문제 (UPROPERTY 관리 문제) (BehaviorTree / AI Flow 개선)
     </th>
-    <th width="350" style="border:2px solid #c8ffa8; background:#ebffdf;">
-      📂 트러블 슈팅 제목
+    <th width="350" style="border:2px solid #a8ddff; background:#e6f6ff;">
+      📘 과도한 FSM 의존으로 인한 상태 관리 문제 (BehaviorTree / AI Flow 개선)
     </th>
   </tr>
 
   <tr>
     <td width="350" style="border:2px solid #a8ddff; background:#e6f6ff; vertical-align:top;">
-      트러블 슈팅 간략 소개 내용
+      60초 이후 주기적으로 발생하던 GC 기반 크래시 문제를 원인 분석 후 해결했습니다.
       <br><br>
       <a href="#t3">[상세설명]</a>
     </td>
-    <td width="350" style="border:2px solid #c8ffa8; background:#ebffdf; vertical-align:top;">
-      트러블 슈팅 간략 소개 내용
+    <td width="350" style="border:2px solid #a8ddff; background:#e6f6ff; vertical-align:top;">
+      과도한 FSM 사용으로 코드 작성이 어려웠던 문제를 로직을 FSM에서 분리해 의존도를 줄이는 방식으로 해결했습니다.
       <br><br>
-      <a href="#t4">[상세설명]</a>
+      <a href="#t3">[상세설명]</a>
     </td>
   </tr>
 </table>
@@ -183,7 +175,7 @@
 
 ---
 
-## 3.  <a id="t2"></a> [(트러블 슈팅 목록 이동)](#문제-해결-경험트러블-슈팅-목차-이동)
+## 3. Delegate / GC Crash 문제 (UPROPERTY 관리 문제) <a id="t2"></a> [(트러블 슈팅 목록 이동)](#문제-해결-경험트러블-슈팅-목차-이동)
 
 <table>
   <tr>
@@ -294,7 +286,7 @@
 
 </br>
 
-# 📘개발 계기
+# 📘개발 계기 [(목차 이동)](#목차)
 ### 1. 언리얼 엔진을 ‘개발자 관점’에서 익히기 위해
 
 사용하기 편한 언리얼의 블루프린트·에디터 기능 뒤에서 어떤 구조와 흐름이 돌아가는지 궁금했습니다.  
